@@ -8,7 +8,7 @@ import { ROUTE_PATHS } from "./const";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/golianos-admin">
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           {/* when user opens / */}
