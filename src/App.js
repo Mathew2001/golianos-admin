@@ -8,7 +8,7 @@ import { ROUTE_PATHS } from "./const";
 
 function App() {
   return (
-    <HashRouter basename="/golianos-admin">
+    <HashRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           {/* when user opens / */}
