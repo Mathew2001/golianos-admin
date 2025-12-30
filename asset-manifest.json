@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/golianos-admin/static/css/main.c8dbecbf.css",
-    "main.js": "/golianos-admin/static/js/main.6d2276a3.js",
+    "main.js": "/golianos-admin/static/js/main.0364b165.js",
     "static/js/570.c7d5898e.chunk.js": "/golianos-admin/static/js/570.c7d5898e.chunk.js",
     "static/js/574.847e0c03.chunk.js": "/golianos-admin/static/js/574.847e0c03.chunk.js",
     "static/js/718.6a1773db.chunk.js": "/golianos-admin/static/js/718.6a1773db.chunk.js",
@@ -11,7 +11,7 @@
     "static/media/bootstrap-icons.woff2?": "/golianos-admin/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "index.html": "/golianos-admin/index.html",
     "main.c8dbecbf.css.map": "/golianos-admin/static/css/main.c8dbecbf.css.map",
-    "main.6d2276a3.js.map": "/golianos-admin/static/js/main.6d2276a3.js.map",
+    "main.0364b165.js.map": "/golianos-admin/static/js/main.0364b165.js.map",
     "570.c7d5898e.chunk.js.map": "/golianos-admin/static/js/570.c7d5898e.chunk.js.map",
     "574.847e0c03.chunk.js.map": "/golianos-admin/static/js/574.847e0c03.chunk.js.map",
     "718.6a1773db.chunk.js.map": "/golianos-admin/static/js/718.6a1773db.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.c8dbecbf.css",
-    "static/js/main.6d2276a3.js"
+    "static/js/main.0364b165.js"
   ]
 }
