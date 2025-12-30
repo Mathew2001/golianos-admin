@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Suspense } from "react";
 import Login from "./components/pages/Login";
 import PrivateRoute from "./routes/PrivateRoute";
@@ -8,7 +8,7 @@ import { ROUTE_PATHS } from "./const";
 
 function App() {
   return (
-    <BrowserRouter basename="/golianos-admin">
+    <HashRouter basename="/golianos-admin">
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           {/* when user opens / */}
@@ -26,7 +26,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
