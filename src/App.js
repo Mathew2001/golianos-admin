@@ -1,21 +1,27 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ROUTE_PATHS } from './const';
-import {Suspense} from 'react';
-import Login from './components/pages/Login';
-import PrivateRoute from './routes/PrivateRoute';
-import Layout from './components/layout/Layout';
-import routes from './routes/routes';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Suspense } from "react";
+import Login from "./components/pages/Login";
+import PrivateRoute from "./routes/PrivateRoute";
+import Layout from "./components/layout/Layout";
+import routes from "./routes/routes";
+import { ROUTE_PATHS } from "./const";
+
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
+          {/* when user opens / */}
+          <Route path="/" element={<Navigate to={ROUTE_PATHS.LOGIN} replace />} />
+
           <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />
-          <Route path="" element={<PrivateRoute />} >
-            <Route path="" element={<Layout />} >
-               {routes.map((route, index) => (
+
+          {/* protected area */}
+          <Route element={<PrivateRoute />}>
+            <Route element={<Layout />}>
+              {routes.map((route, index) => (
                 <Route key={index} path={route.path} element={route.element} />
-               ))}
+              ))}
             </Route>
           </Route>
         </Routes>
