@@ -11,19 +11,23 @@ function App() {
     <HashRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          {/* when user opens / */}
-          <Route path="/" element={<Navigate to={ROUTE_PATHS.LOGIN} replace />} />
-
+          {/* public */}
           <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />
 
-          {/* protected area */}
+          {/* protected */}
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
-              {routes.map((route, index) => (
-                <Route key={index} path={route.path} element={route.element} />
+              {/* default protected page */}
+              <Route index element={<Navigate to={ROUTE_PATHS.DASHBOARD} replace />} />
+
+              {routes.map((r) => (
+                <Route key={r.path} path={r.path} element={r.element} />
               ))}
             </Route>
           </Route>
+
+          {/* fallback */}
+          {/* <Route path="*" element={<Navigate to={ROUTE_PATHS.LOGIN} replace />} /> */}
         </Routes>
       </Suspense>
     </HashRouter>

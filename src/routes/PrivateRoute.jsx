@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 import { ROUTE_PATHS } from "../const";
 
+
 const PrivateRoute = () => {
   const {userInfo} = useSelector((state) => state.userReducer);
   // If no user, redirect to login

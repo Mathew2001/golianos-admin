@@ -36,7 +36,7 @@ export const resizeFile = (file) =>
 
 export const ROUTE_PATHS = {
   LOGIN: "/login",
-  DASHBOARD: "dashboard",
+  DASHBOARD: "/dashboard",
   REVIEWS: "reviews",
   CONTACT_US: "contact-us",
   ADD_BUSINESS: "business/add",
