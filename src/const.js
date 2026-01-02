@@ -36,13 +36,13 @@ export const resizeFile = (file) =>
 
 export const ROUTE_PATHS = {
   LOGIN: "/login",
-  DASHBOARD: "/dashboard",
-  REVIEWS: "/reviews",
-  CONTACT_US: "/contact-us",
+  DASHBOARD: "dashboard",
+  REVIEWS: "reviews",
+  CONTACT_US: "contact-us",
   ADD_BUSINESS: "business/add",
-  EDIT_BUSINESS: "/business/edit/:id",
-  NEW_PAGE: "/page/add",
-  EDIT_PAGE: "/page/edit/:id",
+  EDIT_BUSINESS: "business/edit/:id",
+  NEW_PAGE: "page/add",
+  EDIT_PAGE: "page/edit/:id",
 }
 
 export const COOKIE_KEYS = {

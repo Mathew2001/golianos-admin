@@ -18,7 +18,7 @@ function App() {
 
           {/* protected area */}
           <Route element={<PrivateRoute />}>
-            <Route element={<Layout />}>
+            <Route index element={<Layout />}>
               {routes.map((route, index) => (
                 <Route key={index} path={route.path} element={route.element} />
               ))}
