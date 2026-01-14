@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ROUTE_PATHS } from '../../const';
-import SidebarRoutes from '../../routes/SidebarRoutes';
+import SidebarRoutes from '../SidebarRoutes';
 import { useSelector } from 'react-redux'; 
-import pageReducer from '../../redux/reducers/PageReducer';
-import { getAllPagesByBusinessId } from '../../redux/actions/PageActions';
+import { getAllPagesByBusinessId } from '../../../redux/actions/PageActions';
 import { useDispatch } from 'react-redux';
 const Sidebar = ({businessId}) => {
   const dispatch = useDispatch();

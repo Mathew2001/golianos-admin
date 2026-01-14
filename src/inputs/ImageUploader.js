@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Controller } from "react-hook-form";
-import imageService from "../redux/sevices/imageServices";
+import imageService from "../redux/services/imageServices";
 import SingleImageUploader from "./SingleImageUploader";
 
 const ImageUploader = ({ name, control, ImageTitle = "תמונה" }) => {

@@ -1,4 +1,4 @@
-import contactUsServices from "../sevices/contactUsServices";
+import contactUsServices from "../services/contactUsServices";
 
 export const CONTACT_US_ACTIONS = {
   CONTACT_US_LOADING: "CONTACT_US_LOADING",

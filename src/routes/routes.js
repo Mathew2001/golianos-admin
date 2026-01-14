@@ -1,41 +1,69 @@
 import { ROUTE_PATHS } from '../const';
 import { lazy } from 'react';
 
-const Dashboard = lazy(() => import('../components/pages/Dashboard'));
-const Business = lazy(() => import('../components/pages/Business'));
-const Reviews = lazy(() => import('../components/reviews/ReviewsButton'));
-const ContactUs = lazy(() => import('../components/contact-us/ContactUsButton'));
-const NewPage = lazy(() => import('../components/pages/NewPage'));
+const OwnerDashboard = lazy(() => import('../components/owner/pages/Dashboard'));
+const OwnerBusiness = lazy(() => import('../components/owner/pages/Business'));
+const OwnerNewPage = lazy(() => import('../components/owner/pages/NewPage'));
 
-const routes = [
+const AdminDashboard = lazy(() => import('../components/admin/pages/Dashboard'));
+const AdminBusiness = lazy(() => import('../components/admin/pages/Business'));
+const AdminNewPage = lazy(() => import('../components/admin/pages/NewPage'));
+
+const ReviewButton = lazy(() => import('../components/reviews/ReviewsButton'));
+const ContactUsButton = lazy(() => import('../components/contact-us/ContactUsButton'));
+
+
+const ownerRoutes = [
   {
-    path: ROUTE_PATHS.DASHBOARD,
-    element: <Dashboard />,
+    path: ROUTE_PATHS.OWNER_DASHBOARD,
+    element: <OwnerDashboard />,
   },
   {
-    path: ROUTE_PATHS.ADD_BUSINESS,
-    element: <Business />,
+    path: ROUTE_PATHS.OWNER_EDIT_BUSINESS,
+    element: <OwnerBusiness />,
   },
   {
-    path: ROUTE_PATHS.EDIT_BUSINESS,
-    element: <Business />,
+    path: ROUTE_PATHS.OWNER_REVIEWS,
+    element: <ReviewButton />,
   },
   {
-    path: ROUTE_PATHS.REVIEWS,
-    element: <Reviews />,
+    path: ROUTE_PATHS.OWNER_CONTACT_US,
+    element: <ContactUsButton />,
   },
   {
-    path: ROUTE_PATHS.CONTACT_US,
-    element: <ContactUs />,
-  },
-  {
-    path: ROUTE_PATHS.NEW_PAGE,
-    element: <NewPage />,
-  },
-  {
-    path: ROUTE_PATHS.EDIT_PAGE,
-    element: <NewPage />,
+    path: ROUTE_PATHS.OWNER_EDIT_PAGE,
+    element: <OwnerNewPage />,
   },
 ]
 
-export default routes;
+const adminRoutes = [
+  {
+    path: ROUTE_PATHS.ADMIN_DASHBOARD,
+    element: <AdminDashboard />,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_ADD_BUSINESS,
+    element: <AdminBusiness />,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_EDIT_BUSINESS,
+    element: <AdminBusiness />,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_NEW_PAGE,
+    element: <AdminNewPage />,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_EDIT_PAGE,
+    element: <AdminNewPage />,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_REVIEWS,
+    element: <ReviewButton />,
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_CONTACT_US,
+    element: <ContactUsButton />,
+  },
+]
+export { ownerRoutes, adminRoutes };

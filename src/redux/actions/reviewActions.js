@@ -1,4 +1,4 @@
-import reviewServices from "../sevices/reviewServices";
+import reviewServices from "../services/reviewServices";
 
 export const REVIEW_ACTIONS = {
   LOADING_REVIEW: "LOADING_REVIEW",

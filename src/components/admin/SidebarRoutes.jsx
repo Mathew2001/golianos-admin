@@ -1,6 +1,6 @@
-import { ROUTE_PATHS } from "../const";
-import LinkButton from "../components/buttons/LinkButton";
-import LogOutButton from "../components/buttons/LogOutButton";
+import { ROUTE_PATHS } from "../../const";
+import LinkButton from "../buttons/LinkButton";
+import LogOutButton from "../buttons/LogOutButton";
 
 
 
@@ -25,21 +25,21 @@ const SidebarRoutes = ({ businessId}) => {
           <li className="mb-2">
             <LinkButton
               text="הדפים שלי"
-              to={ROUTE_PATHS.DASHBOARD}
+              to={`${ROUTE_PATHS.OWNER_DASHBOARD}`}
               className="btn btn-outline-primary w-100 fw-bold shadow-sm py-2"
             />
           </li>
           <li className="mb-2">
             <LinkButton
               text="ביקורות"
-              to={ROUTE_PATHS.REVIEWS}
+              to={`${ROUTE_PATHS.OWNER_REVIEWS}`}
               className="btn btn-outline-primary w-100 fw-bold shadow-sm py-2"
             />
           </li>
           <li className="mb-2">
             <LinkButton
               text="הודעות"
-              to={ROUTE_PATHS.CONTACT_US}
+              to={`${ROUTE_PATHS.OWNER_CONTACT_US}`}
               className="btn btn-outline-primary w-100 fw-bold shadow-sm py-2"
             />
           </li>

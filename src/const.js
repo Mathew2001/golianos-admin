@@ -36,15 +36,25 @@ export const resizeFile = (file) =>
 
 export const ROUTE_PATHS = {
   LOGIN: "/login",
-  DASHBOARD: "/dashboard",
-  REVIEWS: "reviews",
-  CONTACT_US: "contact-us",
-  ADD_BUSINESS: "business/add",
-  EDIT_BUSINESS: "business/edit/:id",
-  NEW_PAGE: "page/add",
-  EDIT_PAGE: "page/edit/:id",
+
+  // owner routes
+  OWNER_DASHBOARD: "dashboard",
+  OWNER_REVIEWS: "reviews",
+  OWNER_CONTACT_US: "contact-us",
+  OWNER_EDIT_BUSINESS: "business/edit/:id",
+  OWNER_EDIT_PAGE: "page/edit/:id",
+
+  // admin routes
+  ADMIN_DASHBOARD: "dashboard",
+  ADMIN_ADD_BUSINESS: "business/add",
+  ADMIN_EDIT_BUSINESS: "business/edit/:id",
+  ADMIN_NEW_PAGE: "page/add",
+  ADMIN_EDIT_PAGE: "page/edit/:id",
+  ADMIN_REVIEWS: "reviews",
+  ADMIN_CONTACT_US: "contact-us",
 }
 
-export const COOKIE_KEYS = {
-  USER_INFO: "user_info",
+export const USER_ROLES = {
+  OWNER: "OWNER",
+  SUPER_ADMIN: "SUPER_ADMIN",
 }

@@ -28,6 +28,19 @@ const businessReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       }
+    case BUSINESS_ACTIONS.GET_BUSINESS_SUCCESS:
+      return {
+        ...state,
+        business: action.payload,
+        loading: false,
+        error: null,
+      }
+    case BUSINESS_ACTIONS.GET_BUSINESS_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      }
     case BUSINESS_ACTIONS.GET_BUSINESS_BY_ID_SUCCESS:
       return {
         ...state,

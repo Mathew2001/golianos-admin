@@ -1,21 +1,21 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import usePageSubmit from '../../hooks/usePageSubmit'
+import usePageSubmit from '../../../hooks/usePageSubmit'
 import { useParams, useLocation } from 'react-router-dom'
-import { getPageById } from '../../redux/actions/PageActions'
-import Form from '../../inputs/forms/Form'
-import SubForm from '../../inputs/forms/SubForm'
-import InputArea from '../../inputs/InputArea'
-import LinkButton from '../buttons/LinkButton'
-import SectionsEditor from '../../inputs/SectionsEditor'
-import { ROUTE_PATHS } from '../../const'
-import ImageUploader from '../../inputs/ImageUploader'
+import { getPageById } from '../../../redux/actions/PageActions'
+import Form from '../../../inputs/forms/Form'
+import SubForm from '../../../inputs/forms/SubForm'
+import InputArea from '../../../inputs/InputArea'
+import LinkButton from '../../buttons/LinkButton'
+import SectionsEditor from '../../../inputs/SectionsEditor'
+import { ROUTE_PATHS } from '../../../const'
+import ImageUploader from '../../../inputs/ImageUploader'
 
 const NewPage = () => {
   const { id } = useParams();
 
-  const {businessByUserId} = useSelector((state) => state.businessReducer);
-  const businessId = businessByUserId._id;
+  const {business} = useSelector((state) => state.businessReducer);
+  const businessId = business._id;
   const { onSubmit, register, handleSubmit, errors, reset, control } = usePageSubmit(id, businessId);
   const dispatch = useDispatch();
   
@@ -38,25 +38,15 @@ const NewPage = () => {
   }, [pageById, reset]);
 
 
+  if (!business || !pageById) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      <LinkButton text="חזרה לדף הבית" to={ROUTE_PATHS.DASHBOARD} className="btn btn-primary" />
+      <LinkButton text="חזרה לדף הבית" to={"/owner/dashboard"} className="btn btn-primary" />
       <Form
         subForms={[
-          // {
-          //   title: 'דף',
-          //   children: [
-          //     {
-          //       component: InputArea,
-          //       props: {
-          //         register,
-          //         name: 'slug',
-          //         label: 'קיצור',
-          //         errors,
-          //       },
-          //     }
-          //   ],
-          // },
           {
             title: 'שם הדף',
             children: [

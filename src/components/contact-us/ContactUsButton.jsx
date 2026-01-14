@@ -14,21 +14,33 @@ const ContactUsButton = () => {
   const [openCompletedModal, setOpenCompletedModal] = useState(false)
   const [openInProgressModal, setOpenInProgressModal] = useState(false)
   const [openPendingModal, setOpenPendingModal] = useState(false)
-  const [currentStatus, setCurrentStatus] = useState('pending')
+  const [currentStatus, setCurrentStatus] = useState('all')
 
   const HandleButtons = (action) => {
     switch (action) {
       case 'completed':
         setCurrentStatus('completed')
         setOpenCompletedModal(!openCompletedModal)
+        setOpenInProgressModal(false)
+        setOpenPendingModal(false)
         break
       case 'in progress':
         setCurrentStatus('in progress')
         setOpenInProgressModal(!openInProgressModal)
+        setOpenCompletedModal(false)
+        setOpenPendingModal(false)
         break
-      default:
+      case 'pending':
         setCurrentStatus('pending')
         setOpenPendingModal(!openPendingModal)
+        setOpenCompletedModal(false)
+        setOpenInProgressModal(false)
+        break
+      default:
+        setCurrentStatus('all')
+        setOpenCompletedModal(false)
+        setOpenInProgressModal(false)
+        setOpenPendingModal(false)
         break
     }
   }
@@ -46,10 +58,9 @@ const ContactUsButton = () => {
 
   return (
     <div className="container mt-4" dir="rtl">
-      <LinkButton text="חזרה" to={ROUTE_PATHS.DASHBOARD} className="btn btn-primary m-2" />
       <button className="btn btn-primary m-2" onClick={() => HandleButtons('completed')}>פניות משתמשים שהסתימו בהצלחה</button>
       <button className="btn btn-primary m-2" onClick={() => HandleButtons('in progress')}>פניות משתמשים בביצוע</button>
-      <button className="btn btn-primary m-2" onClick={() => HandleButtons('pending')}>פניות משתמשים ממתין</button>
+      <button className="btn btn-primary m-2" onClick={() => HandleButtons('pending')}>פניות משתמשים שממתינות לביצוע</button>
       <br />
       {contactUs.length > 0 && (
         <DeleteDialog text="האם אתה בטוח שברצונך למחוק את כל הפניות?" id="all" action={deleteAllContactUs} all={true} />
@@ -62,7 +73,7 @@ const ContactUsButton = () => {
         <ContactsUsAll contactUs={inProgressContactUs} title="פניות משתמשים בביצוע:" />
       )}
       {currentStatus === 'pending' && openPendingModal && (
-        <ContactsUsAll contactUs={pendingContactUs} title="פניות משתמשים ממתינים:" />
+        <ContactsUsAll contactUs={pendingContactUs} title="פניות משתמשים שממתינות לביצוע:" />
       )}
     </div>
   )

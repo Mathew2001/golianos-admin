@@ -28,13 +28,17 @@ const ReviewsButton = () => {
       case 'approved':
         setCurrentStatus('approved')
         setOpenApprovedModal(!openApprovedModal)
+        setOpenUnapprovedModal(false)
         break
       case 'unapproved':
         setCurrentStatus('unapproved')
         setOpenUnapprovedModal(!openUnapprovedModal)
+        setOpenApprovedModal(false)
         break
       default:
         setCurrentStatus('all')
+        setOpenApprovedModal(false)
+        setOpenUnapprovedModal(false)
         break
     }
   }
@@ -47,7 +51,6 @@ const ReviewsButton = () => {
     <div className="container mt-5" dir="rtl">
       <button className="btn btn-primary m-2" onClick={() => HandleButtons('approved')}>ביקורות מאושרות</button>
       <button className="btn btn-primary m-2" onClick={() => HandleButtons('unapproved')}>ביקורות ממתינות לאישור</button>
-      <LinkButton text="חזרה" to={ROUTE_PATHS.DASHBOARD} className="btn btn-primary m-2" />
       <br />
       {reviews.length > 0 && (
         <DeleteDialog text="האם אתה בטוח שברצונך למחוק את כל הביקורות?" id="all" action={deleteAllReviews} all={true} />

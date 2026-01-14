@@ -4,6 +4,9 @@ const businessServices = {
   updateBusiness(id, body){
     return httpService.put(`/business/update/${id}`, body);
   },
+  getBusiness(){
+    return httpService.get("/business/get");
+  },
   getBusinessById(id){
     return httpService.get(`/business/byid/${id}`);
   },

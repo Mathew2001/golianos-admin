@@ -1,13 +1,13 @@
-import useBusinessSubmit from "../../hooks/useBusinessSubmit";
+import useBusinessSubmit from "../../../hooks/useBusinessSubmit";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Form from "../../inputs/forms/Form";
-import SubForm from "../../inputs/forms/SubForm";
-import InputArea from "../../inputs/InputArea";
+import Form from "../../../inputs/forms/Form";
+import SubForm from "../../../inputs/forms/SubForm";
+import InputArea from "../../../inputs/InputArea";
 import { useEffect } from "react";
-import { getBusinessById } from "../../redux/actions/businessActions";
+import { getBusiness } from "../../../redux/actions/businessActions";
 import { useDispatch } from "react-redux";
-import ImageUploader from "../../inputs/ImageUploader";
+import ImageUploader from "../../../inputs/ImageUploader";
 
 const Business = () => {
   const { id } = useParams();
@@ -17,8 +17,8 @@ const Business = () => {
   const { business, loading } = useSelector((state) => state.businessReducer);
 
   useEffect(() => {
-    dispatch(getBusinessById(id));
-  }, [dispatch, id]);
+    dispatch(getBusiness());
+  }, [dispatch]);
 
   useEffect(() => {
     if (business) {

@@ -1,13 +1,12 @@
 import { USER_ACTIONS } from "../actions/userActions";
-import Cookies from "js-cookie";
-import { COOKIE_KEYS } from "../../const";
 
-const userInfo = Cookies.get(COOKIE_KEYS.USER_INFO) ? JSON.parse(Cookies.get(COOKIE_KEYS.USER_INFO)) : null;
 const initialState = {
-  userInfo: userInfo,
+  userInfo: null,
+  accessToken: null,
   loading: false,
   error: null,
-}
+  initialized: false,
+};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,56 +15,79 @@ const userReducer = (state = initialState, action) => {
         ...state,
         loading: true,
         error: null,
-      }
+      };
+
     case USER_ACTIONS.USER_LOGOUT:
       return {
         ...state,
         userInfo: null,
+        accessToken: null,
         loading: false,
         error: null,
-      }
+        initialized: true, // ✅ app is initialized even after logout
+      };
+
     case USER_ACTIONS.LOGIN_USER_SUCCESS:
       return {
         ...state,
-        userInfo: action.payload,
+        userInfo: action.payload.user,
+        accessToken: action.payload.accessToken,
         loading: false,
         error: null,
-      }
+        initialized: true, // ✅
+      };
+
     case USER_ACTIONS.LOGIN_USER_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload,
-      }
-    case USER_ACTIONS.GET_USER_BY_ID_SUCCESS:
+        initialized: true, // ✅
+      };
+
+    // ✅ NEW: refresh success
+    case USER_ACTIONS.REFRESH_TOKEN_SUCCESS:
       return {
         ...state,
-        userInfo: action.payload,
+        accessToken: action.payload.accessToken,
+        // keep userInfo if you already have it
+        // OR if refresh returns user, set it here
+        userInfo: action.payload.user || state.userInfo,
         loading: false,
         error: null,
-      }
-    case USER_ACTIONS.GET_USER_BY_ID_FAIL:
+        initialized: true, // ✅ critical
+      };
+
+    // ✅ NEW: refresh fail
+    case USER_ACTIONS.REFRESH_TOKEN_FAIL:
       return {
         ...state,
+        userInfo: null,
+        accessToken: null,
         loading: false,
         error: action.payload,
-      }
+        initialized: true, // ✅ critical
+      };
+
     case USER_ACTIONS.UPDATE_USER_SUCCESS:
       return {
         ...state,
-        userInfo: action.payload,
+        userInfo: action.payload.user,
+        accessToken: action.payload.accessToken,
         loading: false,
         error: null,
-      }
+      };
+
     case USER_ACTIONS.UPDATE_USER_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload,
-      }
+      };
+
     default:
       return state;
   }
-}
+};
 
 export default userReducer;

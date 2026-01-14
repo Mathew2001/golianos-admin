@@ -5,13 +5,12 @@ import { ROUTE_PATHS } from "../const";
 
 
 const PrivateRoute = () => {
-  const {userInfo} = useSelector((state) => state.userReducer);
-  // If no user, redirect to login
-  if (!userInfo) {
-    return <Navigate to={ROUTE_PATHS.LOGIN} replace />;
+  const {initialized,accessToken} = useSelector((state) => state.userReducer);
+  if(!initialized){
+    return <div>Loading...</div>;
   }
-  // Otherwise, render the nested route
-  return <Outlet />;
+  const isAuth = !!accessToken;
+  return isAuth ? <Outlet /> : <Navigate to={ROUTE_PATHS.LOGIN} replace />;
 };
 
 export default PrivateRoute;

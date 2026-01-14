@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
-import PageCard from '../../components/cards/PageCard';
+import PageCard from '../../cards/PageCard';
 
 const Pages = () => {
 
   const { pagesByBusinessId } = useSelector((state) => state.pageReducer);
-
+  if (!pagesByBusinessId) {
+    return <div>Loading...</div>;
+  }
   return (
     <div>
       {pagesByBusinessId.length > 0 ? (

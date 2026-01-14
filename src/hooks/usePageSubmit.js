@@ -1,12 +1,14 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { createPage, updatePage } from "../redux/actions/PageActions";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../const";
-
+import { USER_ROLES } from "../const";
 const usePageSubmit = (id, businessId) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {userInfo} = useSelector((state) => state.userReducer);
+  const isAdmin = userInfo?.role === USER_ROLES.SUPER_ADMIN;
   const {
     register,
     handleSubmit,
@@ -18,11 +20,16 @@ const usePageSubmit = (id, businessId) => {
     if (businessId && slug && sections && pageName) {
       if (id) {
         dispatch(updatePage(id, { businessId, slug, sections, pageName }));
-        navigate(`${ROUTE_PATHS.DASHBOARD}`);
+        navigate(`${isAdmin ? "/admin/dashboard" : "/owner/dashboard"}`);
       }
       else {
-        dispatch(createPage({ businessId, slug, sections, pageName }));
-        navigate(`${ROUTE_PATHS.DASHBOARD}`);
+        if(isAdmin) {
+          dispatch(createPage({ businessId, slug, sections, pageName }));
+          navigate(`/admin/dashboard`);
+        }
+        else {
+          console.log("you are not admin");
+        }
       }
     }
     else {

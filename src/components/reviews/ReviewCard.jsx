@@ -15,8 +15,8 @@ const ReviewCard = ({ userName, rating, content, isApproved: initialIsApproved, 
 
   return (
     <div className="col-12 col-md-6 col-lg-4">
-      <div className="card shadow-sm">
-        <div className="card-header bg-light h-100">
+      <div className="card shadow-sm h-100">
+        <div className="card-body bg-light">
           <h1 className="card-title h5 mb-2">{userName}</h1>
           <div className="d-flex align-items-center mb-2">
             {[...Array(5)].map((_, index) => (

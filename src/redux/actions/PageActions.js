@@ -1,4 +1,4 @@
-import pageServices from "../sevices/PageServices";
+import pageServices from "../services/PageServices";
 
 export const GET_ALL_PAGES_SUCCESS = "GET_ALL_PAGES_SUCCESS";
 export const GET_ALL_PAGES_FAIL = "GET_ALL_PAGES_FAIL";

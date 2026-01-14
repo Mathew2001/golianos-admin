@@ -1,8 +1,7 @@
-
-import Form from "../../inputs/forms/Form";
-import SubForm from "../../inputs/forms/SubForm";
-import InputArea from "../../inputs/InputArea";
-import useUserSubmit from "../../hooks/userUserSubmit";
+import Form from "../inputs/forms/Form";
+import SubForm from "../inputs/forms/SubForm";
+import InputArea from "../inputs/InputArea";
+import useUserSubmit from "../hooks/userUserSubmit";
 const Login = () => {
 
   const { register, handleSubmit, errors, onSubmit } = useUserSubmit();

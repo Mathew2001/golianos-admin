@@ -10,6 +10,12 @@ const userServices = {
   updateUser(id, body){
     return requests.put(`/user/update/${id}`, body);
   },
+  refreshToken(){
+    return requests.get("/user/refresh");
+  },
+  logoutUser(){
+    return requests.post("/user/logout");
+  }
 }
 
 export default userServices;

@@ -1,30 +1,28 @@
-import LinkButton from '../buttons/LinkButton'
-import { ROUTE_PATHS } from '../../const'
+import LinkButton from '../../buttons/LinkButton'
+import { ROUTE_PATHS } from '../../../const'
 import Pages from './Pages'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import { getAllPagesByBusinessId } from '../../redux/actions/PageActions'
-import { getBusinessByUserId } from '../../redux/actions/businessActions'
+import { getAllPagesByBusinessId } from '../../../redux/actions/PageActions'
+import { getBusiness } from '../../../redux/actions/businessActions'
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const { userInfo } = useSelector((state) => state.userReducer);
-  const { businessByUserId } = useSelector((state) => state.businessReducer);
+  const { business } = useSelector((state) => state.businessReducer);
   const { pagesByBusinessId } = useSelector((state) => state.pageReducer);
 
   useEffect(() => {
-    if (userInfo._id) {
-      dispatch(getBusinessByUserId(userInfo._id));
-    }
-  }, [dispatch, userInfo._id]);
+    dispatch(getBusiness());
+  }, [dispatch]);
 
   useEffect(() => {
-    if (businessByUserId._id) {
-      dispatch(getAllPagesByBusinessId(businessByUserId._id));
+    if (business._id) {
+      dispatch(getAllPagesByBusinessId(business._id));
     }
-  }, [dispatch, businessByUserId._id]);
+  }, [dispatch, business._id]);
 
-  if (!userInfo || !businessByUserId || !pagesByBusinessId) {
+
+  if (!business || !pagesByBusinessId) {
     return <div>Loading...</div>;
   }
 
