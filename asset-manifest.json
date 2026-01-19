@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/golianos-admin/static/css/main.c8dbecbf.css",
-    "main.js": "/golianos-admin/static/js/main.466dcbc9.js",
+    "main.js": "/golianos-admin/static/js/main.968263f4.js",
     "static/js/321.24278faa.chunk.js": "/golianos-admin/static/js/321.24278faa.chunk.js",
-    "static/js/274.6f6b2eb6.chunk.js": "/golianos-admin/static/js/274.6f6b2eb6.chunk.js",
-    "static/js/93.f7257dda.chunk.js": "/golianos-admin/static/js/93.f7257dda.chunk.js",
+    "static/js/274.993233fe.chunk.js": "/golianos-admin/static/js/274.993233fe.chunk.js",
+    "static/js/93.1d968bcb.chunk.js": "/golianos-admin/static/js/93.1d968bcb.chunk.js",
     "static/js/845.4b72fbea.chunk.js": "/golianos-admin/static/js/845.4b72fbea.chunk.js",
-    "static/js/886.c2bb6e3c.chunk.js": "/golianos-admin/static/js/886.c2bb6e3c.chunk.js",
-    "static/js/153.84f64c01.chunk.js": "/golianos-admin/static/js/153.84f64c01.chunk.js",
+    "static/js/886.100f78a1.chunk.js": "/golianos-admin/static/js/886.100f78a1.chunk.js",
+    "static/js/153.66e974ee.chunk.js": "/golianos-admin/static/js/153.66e974ee.chunk.js",
     "static/js/718.9a72ee37.chunk.js": "/golianos-admin/static/js/718.9a72ee37.chunk.js",
     "static/js/899.3d3e7dfb.chunk.js": "/golianos-admin/static/js/899.3d3e7dfb.chunk.js",
     "static/media/bootstrap-icons.woff?": "/golianos-admin/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/bootstrap-icons.woff2?": "/golianos-admin/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "index.html": "/golianos-admin/index.html",
     "main.c8dbecbf.css.map": "/golianos-admin/static/css/main.c8dbecbf.css.map",
-    "main.466dcbc9.js.map": "/golianos-admin/static/js/main.466dcbc9.js.map",
+    "main.968263f4.js.map": "/golianos-admin/static/js/main.968263f4.js.map",
     "321.24278faa.chunk.js.map": "/golianos-admin/static/js/321.24278faa.chunk.js.map",
-    "274.6f6b2eb6.chunk.js.map": "/golianos-admin/static/js/274.6f6b2eb6.chunk.js.map",
-    "93.f7257dda.chunk.js.map": "/golianos-admin/static/js/93.f7257dda.chunk.js.map",
+    "274.993233fe.chunk.js.map": "/golianos-admin/static/js/274.993233fe.chunk.js.map",
+    "93.1d968bcb.chunk.js.map": "/golianos-admin/static/js/93.1d968bcb.chunk.js.map",
     "845.4b72fbea.chunk.js.map": "/golianos-admin/static/js/845.4b72fbea.chunk.js.map",
-    "886.c2bb6e3c.chunk.js.map": "/golianos-admin/static/js/886.c2bb6e3c.chunk.js.map",
-    "153.84f64c01.chunk.js.map": "/golianos-admin/static/js/153.84f64c01.chunk.js.map",
+    "886.100f78a1.chunk.js.map": "/golianos-admin/static/js/886.100f78a1.chunk.js.map",
+    "153.66e974ee.chunk.js.map": "/golianos-admin/static/js/153.66e974ee.chunk.js.map",
     "718.9a72ee37.chunk.js.map": "/golianos-admin/static/js/718.9a72ee37.chunk.js.map",
     "899.3d3e7dfb.chunk.js.map": "/golianos-admin/static/js/899.3d3e7dfb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8dbecbf.css",
-    "static/js/main.466dcbc9.js"
+    "static/js/main.968263f4.js"
   ]
 }
